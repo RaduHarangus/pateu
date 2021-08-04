@@ -8,6 +8,12 @@ body {
   line-height: 24px;
   color: #fff;
 }
+.social {
+  font-size: 18px;
+}
+.glyphicon {
+  font-size: 18px;
+}
 .header__row1 {
   background-color: #1D2330;
 }
