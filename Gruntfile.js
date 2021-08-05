@@ -9,6 +9,8 @@ module.exports = function(grunt) {
                     'js/carousel.js',
                     'js/contact.js',
                     'js/tooltips.js',
+                    'js/forms.js',
+                    'js/menu.js',
                 ],
                 dest: 'main.js',
                 options: {

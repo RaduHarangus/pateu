@@ -1,9 +1,3 @@
-
-
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
 const email = document.getElementById('exampleInputEmail1');
 const pass = document.getElementById('exampleInputPassword1');
 
@@ -45,13 +39,3 @@ document.getElementById('form').onsubmit = function() {
 };
 
 
-
-
-const categoryWrapper = document.getElementById('categoryWrapper');
-const menuButton = document.getElementById('menuButton');
-
-menuButton.classList.add('notransition');
-
-menuButton.addEventListener('click', function () {
-    categoryWrapper.classList.toggle('show');
-});
