@@ -11,6 +11,8 @@ module.exports = function(grunt) {
                     'js/tooltips.js',
                     'js/forms.js',
                     'js/menu.js',
+                    'js/modal.js',
+                    'js/tabs.js',
                 ],
                 dest: 'main.js',
                 options: {

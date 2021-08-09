@@ -1,3 +1,18 @@
+$(document).ready(function(){
+    $('.carousel').slick({
+        infinite: true,
+        dots: false,
+        speed: 500,
+        autoplay: true,
+        // autoplaySpeed: 2000,
+        fade: true,
+        cssEase: 'linear',
+        arrows: true,
+        // prevArrow: '<button type="button" className="slick-prev"><span>&#8249;</span></button>',
+        // nextArrow: '<button type="button" className="slick-prev"><span>&#8250;</span></button>'
+    });
+});
+
 
 
 $(document).ready(function(){
@@ -55,3 +70,41 @@ menuButton.classList.add('notransition');
 menuButton.addEventListener('click', function () {
     categoryWrapper.classList.toggle('show');
 });
+
+$(document).ready(function() {
+    // display the text "Added to cart" when clicked on a menu icon
+    $('.category__item').on('click', function() {
+        $(this).html("<span>Added to cart</span>");
+    });
+});
+
+$('#modalForm').on('submit', function(event) {
+    event.preventDefault();
+    let formValues = $(this).serialize();
+    // console.log(formValues);
+
+    $.ajax({
+        url: "../ajax/ajaxtest.txt",
+        type: "POST",
+        async: false,
+        data: formValues,
+        success: function(result) {
+            console.log(result);
+        },
+        error: function(err) {
+            console.log("error: ", err);
+        }
+    });
+});
+
+
+
+// var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
+// triggerTabList.forEach(function (triggerEl) {
+//     var tabTrigger = new bootstrap.Tab(triggerEl)
+//
+//     triggerEl.addEventListener('click', function (event) {
+//         event.preventDefault()
+//         tabTrigger.show()
+//     })
+// })

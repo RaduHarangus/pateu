@@ -6,23 +6,43 @@
     <meta name="description" content="https://parkofideas.com/foodz/demo/">
     <title>Pateu</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="header">
+
+<!--        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
+<!--                <div class="navbar-nav">-->
+<!--                    <a class="nav-item nav-link" href="#">Demo</a>-->
+<!--                    <a class="nav-item nav-link" href="#">Product</a>-->
+<!--                    <a class="nav-item nav-link" href="#">Pages</a>-->
+<!--                    <a class="nav-item nav-link" href="#">Blog</a>-->
+<!--                </div>-->
+<!--                -->
+<!--            </div>-->
+<!--        </nav>-->
+
         <nav class="navbar navbar-inverse bg bg--darkblue">
             <div class="container flex-container">
-                <ul class="nav navbar-nav flex-item">
-                    <li><a href="#">Demo</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Pages</a></li>
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item"><a class="nav-link" href="#">Demo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
 
-                    <li class="dropdown">
-                        <a class="drop-link" href="#">Blog</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
                         <ul class="nav navbar-nav dropdown-content">
                             <li><a href="#">Recent Posts</a></li>
                             <li><a href="#">Blog Posts</a></li>
@@ -30,12 +50,43 @@
                     </li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar--center flex-item">
+                <ul class="nav navbar-nav navbar--center flex-container">
                     <li><p class="navbar-text"><span class="glyphicon glyphicon-earphone"></span> +1 (800) 312-2121</p></li>
-                    <li><a class="navbar-nav" href="#">Call me back</a></li>
+                    <li><a class="navbar-nav" id="callMeBack" data-toggle="modal" data-target="#myModal" href="#">Call me back</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right flex-item">
+                <div class="modal-container">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h3 class="modal-title">CALL ME BACK</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <form id="modalForm">
+                                            <div class="form-group">
+                                                <label for="modalName">Your Name</label>
+                                                <input type="text" class="form-control" id="modalName" name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="modalPhone">Your Phone</label>
+                                                <input type="text" class="form-control" id="modalPhone" name="phone">
+                                            </div>
+                                            <button type="submit" class="btn btn-default">Send</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
                 </ul>
             </div>
@@ -54,7 +105,35 @@
                 </a>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                    <li id="search" data-toggle="modal" data-target="#searchModal"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+
+                    <div class="modal-container">
+                        <!-- Modal -->
+                        <div class="modal fade" id="searchModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h5 class="modal-title">What are you looking for?</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <form id="modalSearchForm">
+                                                <div class="form-group">
+<!--                                                    <label for="modalName">Your Name</label>-->
+                                                    <input type="text" class="form-control" id="modalName1" name="name1" placeholder="Start Typing...">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                     <li><a href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
                     <li>
                         <a href="#" data-toggle="tooltip" data-placement="auto bottom" title="No products in the cart">
@@ -125,9 +204,11 @@
     </header>
 
     <main class="main">
-        <section class="home-slider">
-            <div class="img-wrapper">
-                <img class="slide-img" src="./images/slide1.jpg" alt="main image of a tea pot">
+        <section class="carousel">
+            <div class="carousel__item">
+                <div class="img-wrapper">
+                    <img class="slide-img" src="./images/slide1.jpg" alt="main image of a tea pot">
+                </div>
 
                 <div class="hero">
                     <img class="hero__icon" src="./images/emoticon.png" alt="tea pot figure">
@@ -136,6 +217,186 @@
                     <button class="hero__button">Order Now</button>
                 </div>
             </div>
+
+            <div class="carousel__item">
+                <div class="img-wrapper">
+                    <img class="slide-img" src="./images/slide2.jpg" alt="main image of a tea pot">
+                </div>
+
+                <div class="hero">
+                    <img class="hero__icon" src="./images/emoticon.png" alt="tea pot figure">
+                    <h1 class="hero__title">Pepperoni</h1>
+                    <h2 class="hero__subtitle">Spicy</h2>
+                    <button class="hero__button">Order Now</button>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <div class="img-wrapper">
+                    <img class="slide-img" src="./images/slide3.jpg" alt="main image of a tea pot">
+                </div>
+                <div class="hero">
+                    <img class="hero__icon" src="./images/emoticon.png" alt="tea pot figure">
+                    <h1 class="hero__title">Bruschettas</h1>
+                    <h2 class="hero__subtitle">Gouda Cheese</h2>
+                    <button class="hero__button">Order Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="food-selection">
+            <div id="foodSelectionTab" class="container">
+                <ul class="nav nav-pills">
+                    <li class="nav-pills__item active"><a class="btn"href="#1a" data-toggle="tab">Burgers</a></li>
+                    <li class="nav-pills__item"><a class="btn" href="#2a" data-toggle="tab">Pizza</a></li>
+                    <li class="nav-pills__item"><a class="btn" href="#3a" data-toggle="tab">Sushi</a></li>
+                    <li class="nav-pills__item"><a class="btn" href="#4a" data-toggle="tab">Noodles</a></li>
+                </ul>
+
+                <div class="tab-content">
+<!--                    Burgers-->
+                    <div class="tab-pane active" id="1a">
+                        <div class="flex-container">
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0148761486-476x476.jpg" alt="hamburger picture">
+                                <h5>Angus Burger</h5>
+                                <p class="description">A hamburger made using beef from Angus cattle.</p>
+                                <p class="price">$18.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0143287893-476x476.jpg" alt="hamburger picture">
+                                <h5>Aussie Burger</h5>
+                                <p class="description">popular regional hamburger ingredients in Australia.</p>
+                                <p class="price">$18.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0145500747-476x476.jpg" alt="hamburger picture">
+                                <h5>California Burger</h5>
+                                <p class="description">A hamburger served with chicken, lettuce, tomatto and onion.</p>
+                                <p class="price">$18.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0154572829-476x476.jpg" alt="hamburger picture">
+                                <h5>Slugburger</h5>
+                                <p class="description">Served on a bun with mustard, pickles, onion and French fries.</p>
+                                <p class="price">$18.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+<!--                         Burgers end-->
+
+<!--                        Pizzas-->
+                    <div class="tab-pane" id="2a">
+                        <div class="flex-container">
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo3-2519635537-476x476.jpg" alt="hamburger picture">
+                                <h5>Pizza Vesuvio</h5>
+                                <p class="description">Tomato Sauce - Mozzarella - Pepperoni - Mixed Peppers - Green Chillies - Cracked Chillies</p>
+                                <p class="price">$13.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo3-2522082976-476x476.jpg" alt="hamburger picture">
+                                <h5>Pizza Calabria</h5>
+                                <p class="description">Tomato Sauce - Mozzarella - Pepperoni - Mixed Peppers - Green Chillies - Cracked Chillies</p>
+                                <p class="price">$13.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo3-2531788041-476x476.jpg" alt="hamburger picture">
+                                <h5>Pizza Bianca</h5>
+                                <p class="description">Tomato Sauce - Mozzarella - Pepperoni - Mixed Peppers - Green Chillies - Cracked Chillies</p>
+                                <p class="price">$13.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo3-2524830602-476x476.jpg" alt="hamburger picture">
+                                <h5>Pizza Carne</h5>
+                                <p class="description">Tomato Sauce - Mozzarella - Pepperoni - Mixed Peppers - Green Chillies - Cracked Chillies</p>
+                                <p class="price">$13.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+<!--                    Pizzas end-->
+
+<!--                        Sushi-->
+                    <div class="tab-pane" id="3a">
+                        <div class="flex-container">
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0159993503-476x476.jpg" alt="hamburger picture">
+                                <h5>Shrimp Tempura Roll</h5>
+                                <p class="description">Shrimp tempura, avocado, tempura flakes, eel sauce.</p>
+                                <p class="price">$3.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0159993503-476x476.jpg" alt="hamburger picture">
+                                <h5>Shrimp Tempura Roll</h5>
+                                <p class="description">Shrimp tempura, avocado, tempura flakes, eel sauce.</p>
+                                <p class="price">$3.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0159993503-476x476.jpg" alt="hamburger picture">
+                                <h5>Shrimp Tempura Roll</h5>
+                                <p class="description">Shrimp tempura, avocado, tempura flakes, eel sauce.</p>
+                                <p class="price">$3.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0159993503-476x476.jpg" alt="hamburger picture">
+                                <h5>Shrimp Tempura Roll</h5>
+                                <p class="description">Shrimp tempura, avocado, tempura flakes, eel sauce.</p>
+                                <p class="price">$3.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+<!--                        Sushi end-->
+
+<!--                        Noodles-->
+                    <div class="tab-pane" id="4a">
+                        <div class="flex-container">
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0103970107-476x476.jpg" alt="hamburger picture">
+                                <h5>Chicken Chow Mein</h5>
+                                <p class="description">Chicken, bok choy, celery, red bell pepper, oyster sauce.</p>
+                                <p class="price">$8.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0103970107-476x476.jpg" alt="hamburger picture">
+                                <h5>Chicken Chow Mein</h5>
+                                <p class="description">Chicken, bok choy, celery, red bell pepper, oyster sauce.</p>
+                                <p class="price">$8.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0103970107-476x476.jpg" alt="hamburger picture">
+                                <h5>Chicken Chow Mein</h5>
+                                <p class="description">Chicken, bok choy, celery, red bell pepper, oyster sauce.</p>
+                                <p class="price">$8.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                            <div class="card">
+                                <img class="card__img" src="https://parkofideas.com/foodz/demo/wp-content/uploads/2019/03/demo-0103970107-476x476.jpg" alt="hamburger picture">
+                                <h5>Chicken Chow Mein</h5>
+                                <p class="description">Chicken, bok choy, celery, red bell pepper, oyster sauce.</p>
+                                <p class="price">$8.99</p>
+                                <button class="btn btn-success btn-add">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+<!--                    Noodles end-->
+                </div>
+            </div>
+
         </section>
 
         <section class="forms">
@@ -166,7 +427,10 @@
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="main.js"></script>
 
 </body>
