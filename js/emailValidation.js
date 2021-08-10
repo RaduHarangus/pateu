@@ -6,7 +6,8 @@ const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[
 $discountSubmit.on('click', function(e) {
     e.preventDefault();
     let validationMessageBox = $('#validationMessageBox');
-    let validationText = regex.test($discountEmail.val()) ? "Valid e-mail" : "The e-mail address entered is invalid.";
+    let isValidEmail = regex.test($discountEmail.val());
+    let validationText = (isValidEmail === true) ? "Valid e-mail" : "The e-mail address entered is invalid.";
 
     if (!validationMessageBox.length) {
         let validationMessageBox = $("<div></div>");
@@ -14,11 +15,10 @@ $discountSubmit.on('click', function(e) {
         validationMessageBox.append(validationText);
         $discountForm.append(validationMessageBox);
     } else {
-        validationMessageBox.html(validationText);
+        validationMessageBox.text(validationText);
     }
 
-    if (validationText === true) {
-        // $discountForm.trigger("submit");
+    if (isValidEmail === true) {
         $discountForm.submit();
     }
 });
