@@ -22,11 +22,17 @@
   border: none;
   border-radius: initial;
   outline: none;
+  min-height: 58px;
 
+  &-text {
+    margin: 0;
+    padding: 0;
+  }
   &--center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    align-items: center;
 
     @media (max-width: 992px) {
       position: relative;
@@ -120,6 +126,35 @@
   }
 }
 
+.nav {
+  &-item {
+    & + & {
+      margin-left: 25px;
+    }
+  }
+
+  &-link {
+    color: #fff;
+
+    &:hover {
+      color: gray;
+    }
+  }
+}
+
+.svg-search {
+  width: 17px;
+  height: 17px;
+  fill: #fff;
+  &:hover {
+    fill: gray;
+  }
+}
+
+.svg-phone {
+  margin-right: 10px;
+}
+
 .menu-section {
   position: relative;
   background-color: @blue;
@@ -139,8 +174,8 @@
   transform: translateX(-50%);
 
   @media (max-width: 992px) {
-      display: block;
-    }
+    display: block;
+  }
 
   &:hover {
     background-color: @dark-blue;
@@ -169,9 +204,14 @@
 }
 
 .form-control {
-   width: 300px;
+  width: 300px;
 }
 
-.modal-header {
+.modal-title {
   color: gray;
+}
+
+.logo-img {
+  max-width: 90px;
+  max-height: 90px;
 }

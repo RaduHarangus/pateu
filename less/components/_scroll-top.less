@@ -1,0 +1,42 @@
+* {
+  scroll-behavior:  smooth;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 106px;
+  right: 80px;
+  z-index: 99;
+  background-color: #fff;
+  width: 46px;
+  height: 46px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: scale(0.1,0.1);
+  transform: scale(0.1,0.1);
+  transition: opacity 0.5s linear, scale 0.5s, visibility 0.5s linear,-webkit-transform 0.2s linear;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+.svg-to-top {
+  width: 18px;
+  height: 18px;
+}

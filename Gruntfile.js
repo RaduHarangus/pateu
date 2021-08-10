@@ -13,6 +13,8 @@ module.exports = function(grunt) {
                     'js/menu.js',
                     'js/modal.js',
                     'js/tabs.js',
+                    'js/emailValidation.js',
+                    'js/scrollTop.js',
                 ],
                 dest: 'main.js',
                 options: {

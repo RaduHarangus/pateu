@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="top" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,23 +17,12 @@
 </head>
 
 <body>
+
+    <a href="#top" id="scrollTop" class="scroll-top" title="Go to top">
+        <svg viewBox="0 0 18 12" id="svg-to-top" class="svg-to-top" stroke="inherit"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.35992 5.1613L2.86058 11.6606L0.739258 9.53932L9.35992 0.918664L17.9806 9.53932L15.8593 11.6606L9.35992 5.1613Z" fill="inherit" stroke="none"></path></svg>
+    </a>
+
     <header class="header">
-
-<!--        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--                <div class="navbar-nav">-->
-<!--                    <a class="nav-item nav-link" href="#">Demo</a>-->
-<!--                    <a class="nav-item nav-link" href="#">Product</a>-->
-<!--                    <a class="nav-item nav-link" href="#">Pages</a>-->
-<!--                    <a class="nav-item nav-link" href="#">Blog</a>-->
-<!--                </div>-->
-<!--                -->
-<!--            </div>-->
-<!--        </nav>-->
-
         <nav class="navbar navbar-inverse bg bg--darkblue">
             <div class="container flex-container">
                 <ul class="navbar-nav flex-row">
@@ -44,102 +33,96 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
                         <ul class="nav navbar-nav dropdown-content">
-                            <li><a href="#">Recent Posts</a></li>
-                            <li><a href="#">Blog Posts</a></li>
+                            <li><a class="nav-link" href="#">Recent Posts</a></li>
+                            <li><a class="nav-link" href="#">Blog Posts</a></li>
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar--center flex-container">
-                    <li><p class="navbar-text"><span class="glyphicon glyphicon-earphone"></span> +1 (800) 312-2121</p></li>
-                    <li><a class="navbar-nav" id="callMeBack" data-toggle="modal" data-target="#myModal" href="#">Call me back</a></li>
+                    <li class="nav-item"><p class="navbar-text">
+                        <svg viewBox="0 0 18 18" id="svg-phone" class="svg-search svg-phone" fill="inherit" stroke="inherit"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.28755 0C11.5162 0.310887 13.5351 1.31846 15.1307 2.9141C16.644 4.43108 17.6366 6.34135 17.9999 8.44639L16.6177 8.68237C16.3069 6.86574 15.4491 5.21392 14.1419 3.90669C12.7635 2.53205 11.018 1.65931 9.09277 1.38963L9.28755 0ZM13.6848 11.9072C13.0968 11.3267 12.3626 11.3267 11.7783 11.9072L11.7782 11.9073C11.3325 12.3493 10.8868 12.7912 10.4486 13.2407C10.3288 13.3643 10.2276 13.3905 10.0815 13.3081C9.96725 13.2458 9.85002 13.1881 9.73288 13.1305C9.55441 13.0428 9.37615 12.9552 9.20881 12.8511C7.91657 12.0383 6.83408 10.9933 5.8752 9.81718C5.3995 9.23286 4.97625 8.60734 4.68034 7.90317C4.62041 7.76083 4.63165 7.66719 4.74777 7.55108C5.12955 7.18213 5.50309 6.80493 5.8778 6.42656L6.06623 6.23636C6.67676 5.62208 6.67676 4.90292 6.06248 4.28489C5.88832 4.10885 5.71415 3.93468 5.53998 3.76052C5.36581 3.58634 5.19163 3.41216 5.01745 3.23611C4.89759 3.11625 4.77814 2.99597 4.65869 2.87569C4.41981 2.63514 4.18092 2.39459 3.93871 2.15737C3.35065 1.58429 2.6165 1.58429 2.03218 2.16112C1.85236 2.33795 1.67553 2.51658 1.49881 2.69509L1.49879 2.69511L1.49879 2.69511C1.23382 2.96277 0.969126 3.23016 0.694993 3.49081C0.271737 3.8916 0.0582363 4.38228 0.0132888 4.95536C-0.0578782 5.88802 0.170605 6.76824 0.492729 7.62599C1.15196 9.40142 2.15579 10.9783 3.37312 12.4241C5.01745 14.3794 6.98016 15.9263 9.27623 17.0425C10.31 17.5444 11.3813 17.9302 12.5462 17.9939C13.3477 18.0388 14.0444 17.8366 14.6025 17.2111C14.8536 16.9304 15.1258 16.6659 15.3977 16.4017L15.3977 16.4016C15.5395 16.2639 15.6812 16.1261 15.8198 15.9862C16.4191 15.3794 16.4229 14.6453 15.8273 14.046C15.1157 13.3306 14.4003 12.6189 13.6848 11.9072ZM12.9694 8.92199L14.3516 8.68601C14.1343 7.41625 13.535 6.26634 12.6248 5.3524C11.6622 4.38978 10.4449 3.78298 9.10395 3.5957L8.90918 4.98533C9.94672 5.13141 10.8906 5.59962 11.636 6.345C12.3402 7.04917 12.8009 7.94063 12.9694 8.92199Z" fill="inherit" stroke="none"></path></svg>
+                        +1 (800) 312-2121</p></li>
+                    <li class="nav-item"><a class="navbar-nav nav-link" id="callMeBack" data-toggle="modal" data-target="#myModal" href="#">Call me back</a></li>
                 </ul>
-
-                <div class="modal-container">
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h3 class="modal-title">CALL ME BACK</h3>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <form id="modalForm">
-                                            <div class="form-group">
-                                                <label for="modalName">Your Name</label>
-                                                <input type="text" class="form-control" id="modalName" name="name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="modalPhone">Your Phone</label>
-                                                <input type="text" class="form-control" id="modalPhone" name="phone">
-                                            </div>
-                                            <button type="submit" class="btn btn-default">Send</button>
-                                        </form>
-                                    </div>
+                <div id="myModal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">CALL ME BACK</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <form id="modalForm">
+                                        <div class="form-group">
+                                            <label for="modalName">Your Name</label>
+                                            <input type="text" class="form-control" id="modalName" name="name">
+                                      </div>
+                                      <div class="form-group">
+                                            <label for="modalPhone">Your Phone</label>
+                                            <input type="text" class="form-control" id="modalPhone" name="phone">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Send</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <svg viewBox="0 0 14 16" id="svg-user" class="svg-search svg-phone" fill="inherit" stroke="inherit"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.7101 3.71015C10.7101 5.7592 9.04899 7.42029 6.99994 7.42029C4.95088 7.42029 3.28979 5.7592 3.28979 3.71015C3.28979 1.66109 4.95088 0 6.99994 0C9.04899 0 10.7101 1.66109 10.7101 3.71015ZM0.275391 16C0.275391 12.2861 3.28611 9.27539 7.00003 9.27539C10.7139 9.27539 13.7247 12.2861 13.7247 16H0.275391Z" fill="inherit" stroke="none"></path></svg>
+                            Login
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
 
         <nav class="navbar navbar-inverse bg bg--blue py-3">
             <div class="container">
-                <ul class="nav navbar-nav navbar-left social">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
+                <ul class="nav navbar-nav navbar-left social flex-container">
+                    <li class="nav-item"><a href="#" class="nav-link fa fa-facebook"></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link fa fa-instagram"></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link fa fa-twitter"></a></li>
                 </ul>
 
-                <a class="navbar-brand navbar--center" href="#">
-                    <img src="https://parkofideas.com/foodz/demo/wp-content/uploads-new/2019/04/demo3-2428546643.svg" alt="logo picture">
-                </a>
+                <div class="navbar-brand navbar--center">
+                    <img class="logo-img" src="https://parkofideas.com/foodz/demo/wp-content/uploads-new/2019/04/demo3-2428546643.svg" alt="logo picture">
+                </div>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li id="search" data-toggle="modal" data-target="#searchModal"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-
-                    <div class="modal-container">
-                        <!-- Modal -->
-                        <div class="modal fade" id="searchModal" role="dialog">
-                            <div class="modal-dialog">
-
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <ul class="nav navbar-nav navbar-right flex-container">
+                    <li id="search" class="nav-item" data-toggle="modal" data-target="#searchModal"><a href="#"><svg viewBox="0 0 18 17" id="svg-search" class="svg-search" fill="inherit" stroke="inherit"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.7344 11.1283C14.3841 10.0294 14.757 8.7475 14.757 7.37848C14.757 3.30346 11.4535 0 7.37848 0C3.30346 0 0 3.30346 0 7.37848C0 11.4535 3.30346 14.757 7.37848 14.757C9.26218 14.757 10.981 14.0511 12.2849 12.8894L16.1553 16.7598L17.7607 15.1545L13.7344 11.1283ZM12.4867 7.37848C12.4867 10.1997 10.1997 12.4867 7.37848 12.4867C4.55731 12.4867 2.2703 10.1997 2.2703 7.37848C2.2703 4.55731 4.55731 2.2703 7.37848 2.2703C10.1997 2.2703 12.4867 4.55731 12.4867 7.37848Z" fill="inherit" stroke="none"></path></svg></a></li>
+                    <li class="nav-item"><a href="#"><svg viewBox="0 0 18 16" id="svg-wishlist" class="svg-search" fill="inherit" stroke="inherit"><path d="M8.27325 7.50769C8.01675 6.95475 7.875 6.32362 7.875 5.625C7.875 4.92638 8.01675 4.22494 8.27325 3.56681C8.52919 2.90812 8.89987 2.29219 9.35831 1.764C9.81619 1.23638 10.3618 0.794812 10.9671 0.486563C11.5729 0.176625 12.2389 0 12.9375 0C13.6361 0 14.3021 0.14175 14.9079 0.397688C15.5138 0.654188 16.0588 1.02488 16.5167 1.48275C16.974 1.94063 17.3458 2.48625 17.6017 3.09206C17.8588 3.69731 18 4.36388 18 5.0625C18 5.76112 17.8582 6.42769 17.6017 7.03294C17.3458 7.63875 16.9751 8.18438 16.5167 8.64225C16.0594 9.10013 9.60581 14.931 9 15.1875C8.39419 14.931 1.94062 9.10013 1.48275 8.64225C1.02487 8.18438 0.654188 7.63875 0.397688 7.03294C0.14175 6.42769 0 5.76112 0 5.0625C0 4.36388 0.14175 3.69731 0.397688 3.09206C0.654188 2.48625 1.02431 1.94063 1.48275 1.48275C1.94062 1.02488 2.48625 0.654188 3.09206 0.397688C3.69731 0.14175 4.36331 0 5.0625 0C5.76169 0 6.42769 0.176625 7.03294 0.485437C7.63875 0.794812 8.18381 1.23581 8.64225 1.76344C9.10013 2.29163 9.47081 2.90756 9.72731 3.56625C9.98325 4.22494 10.125 4.92638 10.125 5.625C10.125 6.32362 9.98325 6.95475 9.72731 7.50769C9.47081 8.06063 9.10125 8.53594 8.64225 8.92406" fill="inherit" stroke="none"></path></svg></a></li>
+                    <li class="nav-item">
+                        <a href="#" data-toggle="tooltip" data-placement="auto bottom" title="No products in the cart">
+                            <svg viewBox="0 0 18 18" id="svg-cart" class="svg-search" fill="inherit" stroke="inherit"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.64977 6.79688C6.64977 7.21088 6.31377 7.54688 5.89977 7.54688C5.48577 7.54688 5.14977 7.21088 5.15015 6.79688V3.87188C5.15015 1.737 6.88715 0 9.02165 0C11.1565 0 12.8935 1.737 12.8935 3.87188V6.79688C12.8935 7.21088 12.5575 7.54688 12.1435 7.54688C11.7295 7.54688 11.3935 7.21088 11.3935 6.79688V3.87188C11.3935 2.56425 10.3293 1.5 9.02165 1.5C7.71365 1.5 6.64977 2.56425 6.64977 3.87188V6.79688ZM13.6435 5.86157H17.6249C17.8322 5.86157 17.9597 6.02432 17.911 6.2257L15.2875 16.9124C15.1281 17.5128 14.4966 17.9999 13.8749 17.9999H4.12487C3.50349 17.9999 2.87162 17.5132 2.71299 16.9124L0.0891169 6.2257C0.0399919 6.0247 0.167867 5.86157 0.374867 5.86157H4.40012V6.79682C4.40012 7.62407 5.07287 8.29682 5.90012 8.29682C6.72737 8.29682 7.40012 7.62407 7.40012 6.79682V5.86157H10.6435V6.79682C10.6435 7.62407 11.3166 8.29682 12.1435 8.29682C12.9707 8.29682 13.6435 7.62407 13.6435 6.79682V5.86157Z" fill="inherit" stroke="none"></path></svg></span>
+                        </a>
+                    </li>
+                    <div id="searchModal" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
                                         <h5 class="modal-title">What are you looking for?</h5>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <form id="modalSearchForm">
-                                                <div class="form-group">
-<!--                                                    <label for="modalName">Your Name</label>-->
-                                                    <input type="text" class="form-control" id="modalName1" name="name1" placeholder="Start Typing...">
-                                                </div>
-                                            </form>
-                                        </div>
+                                        <form id="modalSearchForm">
+                                            <div class="form-group">
+                                                <!--                                                    <label for="modalName">Your Name</label>-->
+                                                <input type="text" class="form-control" id="modalName1" name="name1" placeholder="Start Typing...">
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-                    <li><a href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
-                    <li>
-                        <a href="#" data-toggle="tooltip" data-placement="auto bottom" title="No products in the cart">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -399,31 +382,64 @@
 
         </section>
 
-        <section class="forms">
-            <div class="container">
-                <form id="form">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Check me out
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+        <section class="discount">
+            <div class="parallax-wrapper">
+                <div class="parallax"></div>
+
+                <div class="discount__content">
+                    <div class="discount__content__title">For 10% Discount</div>
+                    <div class="discount__content__subtitle">Get Promocode</div>
+                    <form id="discountForm">
+                        <input type="text" id="discountEmail" placeholder="Enter your email">
+                        <input type="submit" id="discountSubmit" value="Send">
+                    </form>
+                </div>
             </div>
         </section>
+
+        <section class="home-text">
+            <div class="container flex-container flex-column">
+                <h3>FOODZ – RESTAURANT, PIZZA, FOOD DELIVERY WP THEME</h3>
+
+                <div class="separator"></div>
+
+                <div class="home-text__wrapper flex-container flex-row">
+                    <div class="col">
+                        Giving the pizza its unique flavor and texture is our speciality. Good sauce, right amount of cheese and great crust sets Fratello Pizza apart from other pizza joints .We have a good array of delicious pasta, subs, salads in addition to the more traditional pizzas and speciality pizzas.
+                    </div>
+                    <div class="col">
+                        The interior is remarkably clean and so brightly lit and shiny that it’s almost sobering.Our service is quick, efficient, and polite. Come in or call today and experience the great flavor of Food. Good sauce, right amount of cheese and great crust sets Fratello Pizza.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<!--        <section class="forms">-->
+<!--            <div class="container">-->
+<!--                <form id="form">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="exampleInputEmail1">Email address</label>-->
+<!--                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="exampleInputPassword1">Password</label>-->
+<!--                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="exampleInputFile">File input</label>-->
+<!--                        <input type="file" id="exampleInputFile">-->
+<!--                        <p class="help-block">Example block-level help text here.</p>-->
+<!--                    </div>-->
+<!--                    <div class="checkbox">-->
+<!--                        <label>-->
+<!--                            <input type="checkbox"> Check me out-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-default">Submit</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </section>-->
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

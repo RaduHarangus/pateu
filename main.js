@@ -19,45 +19,45 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-const email = document.getElementById('exampleInputEmail1');
-const pass = document.getElementById('exampleInputPassword1');
-
-const div = document.createElement('div');
-div.setAttribute('class', 'popup-wrapper');
-pass.parentElement.appendChild(div);
-
-const mypopup = document.createElement('p');
-mypopup.setAttribute('class','popup-text');
-mypopup.setAttribute('id','myPopup');
-mypopup.innerText = 'The password must be at least 8 characters long';
-div.appendChild(mypopup);
-
-email.addEventListener('focus',(event) => {
-    event.target.value = "name@name.com";
-});
-
-pass.onfocus = function() {
-    mypopup.classList.toggle("show");
-}
-
-pass.onblur = function() {
-    mypopup.classList.toggle("show");
-}
-
-pass.onkeyup = function() {
-    let passLength = this.value.length;
-    mypopup.innerText = passLength >= 8 ? 'Thank you!' : 'Enter more characters!';
-};
-
-document.getElementById('form').onsubmit = function() {
-    if ((email.value.length <= 0) || (pass.value.length <= 0) ) {
-        alert('Nu ati introdus toate datele necesare (email si parola)!');
-    } else {
-        alert(`Are you sure you want to submit these values: \n 
-                email: ${email.value} \n 
-                password: ${pass.value} ?`);
-    }
-};
+// const email = document.getElementById('exampleInputEmail1');
+// const pass = document.getElementById('exampleInputPassword1');
+//
+// const div = document.createElement('div');
+// div.setAttribute('class', 'popup-wrapper');
+// pass.parentElement.appendChild(div);
+//
+// const mypopup = document.createElement('p');
+// mypopup.setAttribute('class','popup-text');
+// mypopup.setAttribute('id','myPopup');
+// mypopup.innerText = 'The password must be at least 8 characters long';
+// div.appendChild(mypopup);
+//
+// email.addEventListener('focus',(event) => {
+//     event.target.value = "name@name.com";
+// });
+//
+// pass.onfocus = function() {
+//     mypopup.classList.toggle("show");
+// }
+//
+// pass.onblur = function() {
+//     mypopup.classList.toggle("show");
+// }
+//
+// pass.onkeyup = function() {
+//     let passLength = this.value.length;
+//     mypopup.innerText = passLength >= 8 ? 'Thank you!' : 'Enter more characters!';
+// };
+//
+// document.getElementById('form').onsubmit = function() {
+//     if ((email.value.length <= 0) || (pass.value.length <= 0) ) {
+//         alert('Nu ati introdus toate datele necesare (email si parola)!');
+//     } else {
+//         alert(`Are you sure you want to submit these values: \n
+//                 email: ${email.value} \n
+//                 password: ${pass.value} ?`);
+//     }
+// };
 
 
 
@@ -108,3 +108,40 @@ $('#modalForm').on('submit', function(event) {
 //         tabTrigger.show()
 //     })
 // })
+
+const $discountForm = $('#discountForm');
+const $discountEmail = $('#discountEmail');
+const $discountSubmit = $('#discountSubmit');
+const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+$discountSubmit.on('click', function(e) {
+    e.preventDefault();
+    let validationMessageBox = $('#validationMessageBox');
+    let validationText = regex.test($discountEmail.val()) ? "Valid e-mail" : "The e-mail address entered is invalid.";
+
+    if (!validationMessageBox.length) {
+        let validationMessageBox = $("<div></div>");
+        validationMessageBox.attr('id', 'validationMessageBox');
+        validationMessageBox.append(validationText);
+        $discountForm.append(validationMessageBox);
+    } else {
+        validationMessageBox.html(validationText);
+    }
+
+    if (validationText === true) {
+        // $discountForm.trigger("submit");
+        $discountForm.submit();
+    }
+});
+
+
+$(document).ready(function() {
+    let $scrollTop = $('#scrollTop');
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 600) {
+            $scrollTop.addClass('scroll-top--active');
+        } else {
+            $scrollTop.removeClass('scroll-top--active');
+        }
+    });
+});
